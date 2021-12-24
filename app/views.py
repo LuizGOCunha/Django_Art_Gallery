@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . import models
 # Create your views here.
 
@@ -24,10 +24,19 @@ def poesias(request):
     return render(request, 'poesias.html',context={'poesias': poesias})
 
 
-def poesia(request):
-    nome_da_poesia = models.Poesia.titulo
-    autor_da_poesia = models.Poesia.autor
-    corpo_da_poesia = models.Poesia.corpo
-    return render(request, 'poesia.html', context={'nome':nome_da_poesia,
-                                                   'autor':autor_da_poesia,
-                                                   'corpo':corpo_da_poesia})
+def poesia(request, poesia_id):
+    poesia = get_object_or_404(models.Poesia, pk=poesia_id)
+    return render(request, 'poesia.html', context={'poesia': poesia})
+
+def pinturas(request):
+    pinturas = models.Pintura.objects.all()
+    return render(request, 'pinturas.html', context={'pinturas':pinturas})
+
+
+# Isso ainda é mágica pra mim...
+# De onde ele tá tirando esse segundo argumento, o id da pintura? E como ele liga isso ao objeto?
+# Será que a sintaxe usada no urls.py importa? (Creio que está sendo sinalizado de lá)
+# Será que ele recebe esse argumento da url? (Acho que sim, pois é o sinal recebido do urls.py, é a mesma sintaxe)
+def pintura(request, pintura_id):
+    pintura = get_object_or_404(models.Pintura, pk=pintura_id)
+    return render(request, 'pintura.html', context={'pintura':pintura})

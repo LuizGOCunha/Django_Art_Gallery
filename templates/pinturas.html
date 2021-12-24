@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Poesias</title>
+    <title>Pinturas</title>
 </head>
 <body>
-{% for poesia in poesias %}
+{% for pintura in pinturas %}
 
-<a href="poesias/{{poesia.id}}"> {{poesia.titulo}}</a> <br/>
+<a href="pinturas/{{pintura.id}}">{{ pintura }}<a/> <br/>
 <br/>
+
 {% endfor %}
 </body>
 </html>

@@ -19,6 +19,6 @@ class Poesia(Arte):
 
 
 class Pintura(Arte):
-    imagem = models.ImageField('Imagem')
+    imagem = models.ImageField('Imagem', upload_to='media/')
 
 
