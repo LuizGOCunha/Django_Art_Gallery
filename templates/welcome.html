@@ -6,6 +6,23 @@
     <h1>Bem-vindo à Exibição</h1>
 </head>
 <body>
+  <div class="search-wrapper">
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="{% url 'buscar' %}">
+                    <input type="text" name="search" placeholder="Procure sua arte"> <br/>
+                    <button type="submit"><i class="fa fa-search" aria></i>OK</button><br/>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+<br/>
+
 <a href="poesias"> Poesias </a> <br/>
 <br/>
 <a href="pinturas"> Pinturas </ahref></a><br/>

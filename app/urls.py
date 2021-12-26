@@ -11,6 +11,7 @@ urlpatterns = [
     path('poesias', views.poesias, name='poesias'),
     path('poesias/<int:poesia_id>', views.poesia, name='poesia'),
     path('pinturas', views.pinturas, name='pinturas'),
-    path('pinturas/<int:pintura_id>', views.pintura, name='pintura')
+    path('pinturas/<int:pintura_id>', views.pintura, name='pintura'),
+    path('buscar', views.buscar, name='buscar')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # ^ A operação acima "+ static" é essencial para a exibição de imagens, sem isso o url não recebe permissoes necessárias

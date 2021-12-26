@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados de busca</title>
+</head>
+<body>
+    <h2> Resultados de busca: </h2>
+    <h3> Poesias </h3>
+        {% if poesias %}
+            {% for poesia in poesias %}
+                <a href="poesias/{{poesia.id}}"> {{poesia}}</a> <br/>
+                <br/>
+            {% endfor %}
+        {% else %}
+            <p>Nada foi encontrado</p>
+        {% endif %}
+    <h3> Pinturas </h3>
+        {% if pinturas %}
+            {% for pintura in pinturas %}
+                <a href="pinturas/{{pintura.id}}"> {{pintura}}</a> <br/>
+                <br/>
+            {% endfor %}
+        {% else %}
+            <p>Nada foi encontrado</p>
+        {% endif %}
+</body>
+</html>

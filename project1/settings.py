@@ -124,7 +124,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Como esses dois v^ funcionam? Um é o root da media e o outro é onde ela vai ser colocada/encontrada? só pode.
+# Mas qual a utilidade de organizar desse jeito? É possível ter várias MEDIA_URL?
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'

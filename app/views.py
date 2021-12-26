@@ -40,3 +40,51 @@ def pinturas(request):
 def pintura(request, pintura_id):
     pintura = get_object_or_404(models.Pintura, pk=pintura_id)
     return render(request, 'pintura.html', context={'pintura':pintura})
+
+
+# Nessa função de busca fazemos a listaq abaixo em ordem:
+    # Checamos se estamos tendo um parâmetro search
+    # Se sim instanciamos uma string de busca, caso não anulamos essa variavel
+    # Verificamos se string de busca é nula
+    # Se não, puxamos o valor da busca e procuramos entre os atributos dos objetos
+    # Então retornamos o contexto com o valor a ser utilizado na html
+def buscar(request):
+    if 'search' in request.GET:
+        string_de_busca=request.GET['search']
+    else:
+        string_de_busca = None
+    if string_de_busca:
+        pinturas = models.Pintura.objects.all().filter(titulo__icontains=string_de_busca)
+        poesias = models.Poesia.objects.all().filter(titulo__icontains=string_de_busca)
+    else:
+        pinturas = None
+        poesias = None
+    contexto = {
+            'pinturas':pinturas,
+            'poesias':poesias
+    }
+    return render(request, 'buscar.html', contexto)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

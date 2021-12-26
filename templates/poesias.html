@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Poesias</title>
 </head>
-<body>
-{% for poesia in poesias %}
+    <body>
+        <h1>Poesias</h1>
+        {% for poesia in poesias %}
 
-<a href="poesias/{{poesia.id}}"> {{poesia.titulo}}</a> <br/>
-<br/>
-{% endfor %}
-</body>
+        <a href="poesias/{{poesia.id}}"> {{poesia}}</a> <br/>
+        <br/>
+        {% endfor %}
+    </body>
 </html>
