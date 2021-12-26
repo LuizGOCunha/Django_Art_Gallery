@@ -7,7 +7,10 @@
 <body>
 <h2> {{ pintura }} </h2> <br/>
 <br/>
-<img src="{{MEDIA_URL}}{{pintura.imagem}}" alt="{{pintura.titulo}}">
+    {% block content %}
+        <img src="{{pintura.imagem.url}}" alt="{{pintura.imagem.url}}" style="width: 50%">
+
+    {% endblock %}
 
 </body>
 </html>

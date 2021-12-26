@@ -11,7 +11,7 @@ class Arte(models.Model):
                                   blank=True, null= True)
 
     def __str__(self):
-        return f'{self.titulo} - by {self.autor}'
+        return f'{self.id}: {self.titulo} - by {self.autor}'
 
 
 class Poesia(Arte):
