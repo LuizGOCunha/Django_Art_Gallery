@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from . import models
-# Create your views here.
 
 
 def welcome(request):
@@ -33,10 +32,8 @@ def pinturas(request):
     return render(request, 'pinturas.html', context={'pinturas':pinturas})
 
 
-# Isso ainda é mágica pra mim...
-# De onde ele tá tirando esse segundo argumento, o id da pintura? E como ele liga isso ao objeto?
-# Será que a sintaxe usada no urls.py importa? (Creio que está sendo sinalizado de lá)
-# Será que ele recebe esse argumento da url? (Acho que sim, pois é o sinal recebido do urls.py, é a mesma sintaxe)
+# Será que a sintaxe usada no urls.py importa? (R: Está sendo sinalizado de lá)
+# Será que ele recebe esse argumento da url? (R: É o sinal recebido do urls.py, é a mesma sintaxe)
 def pintura(request, pintura_id):
     pintura = get_object_or_404(models.Pintura, pk=pintura_id)
     return render(request, 'pintura.html', context={'pintura':pintura})
